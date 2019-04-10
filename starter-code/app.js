@@ -1,6 +1,8 @@
 const express = require ("express")
 const app = express()
 
+const port = 3000
+
 app.use(express.static("public"))
 
 app.get("/",(req,res)=>{
@@ -16,6 +18,6 @@ app.get('/gallery', (req, res)=>{
     res.sendFile(__dirname + '/views/gallery.html')
 })
 
-app.listen(3000,()=>{
-    console.log("server listening")
+app.listen(port,()=>{
+    console.log("server listening on "+port)
 })
